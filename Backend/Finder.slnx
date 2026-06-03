@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Finder.API/Finder.API.csproj" Id="32debcec-3295-4bab-9887-a1d58faaa8d0" />
+  </Folder>
+  <Folder Name="/src/Commons/">
+    <Project Path="src/Commons/Finder.Common/Finder.Common.csproj" Id="8d52bea0-0efb-46ee-b6da-094ff3042ee6" />
+  </Folder>
+  <Folder Name="/src/Modules/" />
+  <Folder Name="/src/Modules/Identity/">
+    <Project Path="src/Modules/Identity/Identity.Application/Finder.Identity.Application.csproj" Id="6572ca9d-2415-47b5-87f1-ec0f3639eed8" />
+    <Project Path="src/Modules/Identity/Identity.Domain/Finder.Identity.Domain.csproj" Id="c62fdcf0-9291-4465-bf89-b6fdb93f1ed8" />
+    <Project Path="src/Modules/Identity/Identity.Infrastructure/Finder.Identity.Infrastructure.csproj" Id="48d4cd45-fd88-40ca-8f09-87337d039530" />
+    <Project Path="src/Modules/Identity/Identity.Presentation/Finder.Identity.Presentation.csproj" Id="13996032-befe-44e6-8adb-48afaaba6e21" />
+  </Folder>
+</Solution>
