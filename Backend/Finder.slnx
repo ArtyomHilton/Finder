@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/Finder.API/Finder.API.csproj" Id="32debcec-3295-4bab-9887-a1d58faaa8d0" />
   </Folder>
