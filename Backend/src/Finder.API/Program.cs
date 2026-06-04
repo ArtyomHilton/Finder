@@ -1,6 +1,11 @@
+using Finder.API.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configure();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.Configure();
 
 app.Run();
