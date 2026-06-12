@@ -1,6 +1,6 @@
 ﻿namespace Finder.Common.EF.Abstractions;
 
-public interface IHaveTimeStamp
+public interface IHaveTimestamp
 {
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
