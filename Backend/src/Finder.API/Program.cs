@@ -8,4 +8,4 @@ var app = builder.Build();
 
 app.Configure();
 
-app.Run();
+await app.RunAsync();

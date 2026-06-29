@@ -1,12 +1,17 @@
-﻿namespace Finder.API.Extensions;
+﻿using Finder.Common.API;
+
+namespace Finder.API.Extensions;
 
 public static class WebApplicationBuilderExtensions
 {
     extension(WebApplicationBuilder webApplicationBuilder)
     {
-        public void Configure()
+        public WebApplicationBuilder Configure()
         {
-            webApplicationBuilder.Services.AddOpenApi();
+            webApplicationBuilder.Services.AddEndpointsApiExplorer();
+            webApplicationBuilder.AddApiVersioning();
+
+            return webApplicationBuilder;
         }
     }
 }

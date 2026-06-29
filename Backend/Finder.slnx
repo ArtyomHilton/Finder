@@ -6,6 +6,7 @@
     <Project Path="src/Finder.API/Finder.API.csproj" Id="32debcec-3295-4bab-9887-a1d58faaa8d0" />
   </Folder>
   <Folder Name="/src/Commons/">
+    <Project Path="src/Commons/Finder.Common.API/Finder.Common.API.csproj" Id="472b1746-7aac-414e-9fe0-86ae2198e7c3" />
     <Project Path="src/Commons/Finder.Common.EF/Finder.Common.EF.csproj" Id="c1be8c85-b825-4000-8caa-488bb70cc941" />
     <Project Path="src/Commons/Finder.Common.Redis/Finder.Common.Redis.csproj" Id="6bddb2d2-9704-47a7-b403-96630da6a40e" />
     <Project Path="src/Commons/Finder.Common/Finder.Common.csproj" Id="8d52bea0-0efb-46ee-b6da-094ff3042ee6" />
