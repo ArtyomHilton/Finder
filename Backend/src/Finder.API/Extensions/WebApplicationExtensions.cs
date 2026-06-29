@@ -6,18 +6,21 @@ public static class WebApplicationExtensions
 {
     extension(WebApplication webApplication)
     {
-        public void Configure()
+        public WebApplication Configure()
         {
             webApplication.AddScalar();
+            return webApplication;
         }
 
-        private void AddScalar()
+        private WebApplication AddScalar()
         {
             webApplication.MapOpenApi();
             webApplication.MapScalarApiReference(options =>
             {
                 options.WithTitle("Finder API");
             });
+
+            return webApplication;
         }
     }
 }
