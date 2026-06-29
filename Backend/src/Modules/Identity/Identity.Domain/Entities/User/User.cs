@@ -19,4 +19,9 @@ public class User : IEntity<UserId>
     {
         return new User(id, login);
     }
+
+    public void UpdateLogin(Login login)
+    {
+        Login = login;
+    }
 }
