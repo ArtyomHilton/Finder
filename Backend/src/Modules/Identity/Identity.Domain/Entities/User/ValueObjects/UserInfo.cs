@@ -46,7 +46,7 @@ public class UserInfo
         if (string.IsNullOrWhiteSpace(firstName))
             throw new DomainException(DomainMessages.User.UserInfo.FirstNameEmpty, nameof(FirstName));
 
-        if(!Regex.IsMatch(firstName, DomainRules.User.UserInfo.NameRegex))
+        if (!Regex.IsMatch(firstName, DomainRules.User.UserInfo.NameRegex))
             throw new DomainException(DomainMessages.User.UserInfo.FirstNameNotCorrectFormat, nameof(FirstName));
     }
 
@@ -71,7 +71,7 @@ public class UserInfo
     {
         var nowDateTime = DateTime.UtcNow;
 
-        if (nowDateTime.ToDateOnly() < birthdayDate)
+        if (birthdayDate > nowDateTime.ToDateOnly())
             throw new DomainException(DomainMessages.User.UserInfo.BirthdayDateCannotBeGreaterCurrentDate, nameof(BirthdayDate));
 
         if (new DateTime(birthdayDate, new TimeOnly()) > nowDateTime.AddYears(-DomainRules.User.UserInfo.MinAge))

@@ -21,7 +21,7 @@ public static class DependencyInjections
 
         private IServiceCollection AddSettings(IConfiguration configuration)
         {
-            serviceCollection.Configure(configuration.GetSection(nameof(DatabaseSettings)));
+            serviceCollection.Configure<DatabaseSettings>(configuration.GetRequiredSection(nameof(DatabaseSettings)));
             serviceCollection.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
             return serviceCollection;
