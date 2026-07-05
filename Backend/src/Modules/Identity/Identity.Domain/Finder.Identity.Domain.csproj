@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Commons\Finder.Common.EF\Finder.Common.EF.csproj" />
     <ProjectReference Include="..\..\..\Commons\Finder.Common\Finder.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Abstractions\" />
   </ItemGroup>
 
 </Project>

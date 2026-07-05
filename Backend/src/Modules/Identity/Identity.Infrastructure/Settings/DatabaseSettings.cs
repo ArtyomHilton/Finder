@@ -6,5 +6,5 @@ namespace Finder.Identity.Infrastructure.Settings;
 class DatabaseSettings : IDatabaseSettings
 {
     [ConfigurationKeyName("DATABASE_CONNECTION_STRING")]
-    public string ConnectionString { get; } = null!;
+    public string ConnectionString { get; init; } = null!;
 }

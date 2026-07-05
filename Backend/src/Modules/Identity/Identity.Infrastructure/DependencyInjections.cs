@@ -33,7 +33,10 @@ public static class DependencyInjections
             {
                 var settings = sp.GetRequiredService<IDatabaseSettings>();
 
-                builder.UseNpgsql(settings.ConnectionString);
+                builder.UseNpgsql(settings.ConnectionString, options =>
+                {
+                    options.EnableRetryOnFailure(5);
+                });
             });
 
             return serviceCollection;

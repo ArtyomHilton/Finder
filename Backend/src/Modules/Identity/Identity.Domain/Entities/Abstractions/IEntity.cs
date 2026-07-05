@@ -1,7 +1,0 @@
-﻿namespace Finder.Identity.Domain.Entities.Abstractions;
-
-public interface IEntity { }
-public interface IEntity<TId> : IEntity
-{
-    TId Id { get; }
-} 

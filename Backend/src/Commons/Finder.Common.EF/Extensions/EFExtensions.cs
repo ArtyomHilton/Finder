@@ -10,7 +10,9 @@ public static class EFExtensions
     {
         public async Task ApplyMigrationsAsync<T>() where T : DbContext
         {
-            var context = applicationBuilder.ApplicationServices.GetRequiredService<T>();
+            using var scope = applicationBuilder.ApplicationServices.CreateAsyncScope();
+
+            var context = scope.ServiceProvider.GetRequiredService<T>();
 
             await context.Database.MigrateAsync();
         }

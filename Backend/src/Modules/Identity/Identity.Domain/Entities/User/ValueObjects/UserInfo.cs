@@ -1,15 +1,18 @@
 ﻿using System.Text.RegularExpressions;
+using Finder.Common.EF.Abstractions;
 using Finder.Common.Extensions;
 using Finder.Identity.Domain.Exceptions;
 
 namespace Finder.Identity.Domain.Entities.User.ValueObjects;
 
-public class UserInfo
+public class UserInfo : IHaveTimestamp
 {
     public string FirstName { get; private set; } = null!;
     public string LastName { get; private set; } = null!;
     public string? Patronymic { get; private set; }
     public DateOnly BirthdayDate { get; private set; }
+    public DateTime CreatedAt { get; init; }
+    public DateTime UpdatedAt { get; init; }
 
     public UserInfo WithFirstName(string firstName) =>
         Create(firstName, LastName, Patronymic, BirthdayDate);

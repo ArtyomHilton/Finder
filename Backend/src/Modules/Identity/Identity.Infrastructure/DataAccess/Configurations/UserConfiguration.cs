@@ -1,4 +1,5 @@
-﻿using Finder.Identity.Domain.Entities.User;
+﻿using Finder.Common.EF;
+using Finder.Identity.Domain.Entities.User;
 using Finder.Identity.Domain.Entities.User.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -32,6 +33,14 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             )
             .IsRequired();
 
+        builder.Property(x => x.CreatedAt)
+            .HasDefaultValueSql(DatabaseConstants.UtcNow)
+            .ValueGeneratedOnAdd();
+
+        builder.Property(x => x.UpdatedAt)
+            .HasDefaultValueSql(DatabaseConstants.UtcNow)
+            .ValueGeneratedOnAddOrUpdate();
+
         builder.OwnsOne(x => x.Info, builder =>
         {
             builder.ToTable(nameof(UserInfo));
@@ -48,6 +57,14 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
             builder.Property(x => x.BirthdayDate);
             builder.HasIndex(x => x.BirthdayDate);
+
+            builder.Property(x => x.CreatedAt)
+                .HasDefaultValueSql(DatabaseConstants.UtcNow)
+                .ValueGeneratedOnAdd();
+
+            builder.Property(x => x.UpdatedAt)
+                .HasDefaultValueSql(DatabaseConstants.UtcNow)
+                .ValueGeneratedOnAddOrUpdate();
 
             builder.WithOwner()
                 .HasForeignKey("Id");
