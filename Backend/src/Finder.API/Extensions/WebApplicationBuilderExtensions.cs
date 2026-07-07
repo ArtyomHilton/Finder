@@ -1,4 +1,4 @@
-﻿using Finder.Common.API;
+﻿using Finder.Common.API.Extensions;
 using Finder.Identity.Infrastructure;
 
 namespace Finder.API.Extensions;
