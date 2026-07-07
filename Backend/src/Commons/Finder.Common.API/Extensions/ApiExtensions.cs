@@ -1,8 +1,9 @@
 ﻿using Asp.Versioning;
+using Finder.Common.API.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Finder.Common.API;
+namespace Finder.Common.API.Extensions;
 
 public static class ApiExtensions
 {
