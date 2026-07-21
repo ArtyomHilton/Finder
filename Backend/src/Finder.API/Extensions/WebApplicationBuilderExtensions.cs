@@ -1,4 +1,7 @@
-﻿using Finder.Common.API.Extensions;
+﻿using System.Reflection;
+using Finder.Common.API.Extensions;
+using Finder.Common.CQRS;
+using Finder.Identity.Application;
 using Finder.Identity.Infrastructure;
 
 namespace Finder.API.Extensions;
@@ -11,6 +14,7 @@ public static class WebApplicationBuilderExtensions
         {
             webApplicationBuilder.Services.AddEndpointsApiExplorer();
             webApplicationBuilder.AddApiVersioning();
+            webApplicationBuilder.Services.AddCQRS(Assembly.GetExecutingAssembly());
             webApplicationBuilder.AddModules(configuration);
             return webApplicationBuilder;
         }
@@ -18,6 +22,7 @@ public static class WebApplicationBuilderExtensions
         private WebApplicationBuilder AddModules(IConfiguration configuration)
         {
             webApplicationBuilder.Services.AddIdentityInfrastructure(configuration);
+            webApplicationBuilder.Services.AddIdentityApplication();
 
             return webApplicationBuilder;
         }
