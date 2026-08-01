@@ -17,17 +17,11 @@ public class Result
     public bool IsSuccess => _isSuccess;
     public bool IsFailure => !_isSuccess;
 
-    protected Result(Error? error, bool isSuccess)
+    internal Result(Error? error, bool isSuccess)
     {
         _error = error;
         _isSuccess = isSuccess;
     }
-
-    public static Result Success() =>
-        new Result(null, true);
-
-    public static Result Failure(Error error) =>
-        new Result(error, false);
 }
 
 /// <summary>
@@ -42,15 +36,9 @@ public class Result<TValue> : Result
         ? _value!
         : throw new InvalidOperationException("Нельзя получить значение при неуспешном результате");
 
-    private Result(TValue? value, Error? error, bool isSuccess)
+    internal Result(TValue? value, Error? error, bool isSuccess)
         : base(error, isSuccess)
     {
         _value = value;
     }
-
-    public static Result Success(TValue value) =>
-        new Result<TValue>(value, null, true);
-
-    public new static Result Failure(Error error) =>
-        new Result<TValue>(default(TValue), error, false);
 }

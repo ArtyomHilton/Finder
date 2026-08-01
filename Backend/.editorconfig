@@ -209,6 +209,9 @@ dotnet_diagnostic.CS0618.severity = none
 # IDE0058: Значение выражения никогда не используется
 dotnet_diagnostic.IDE0058.severity = none
 
+# CS8618: Поле, не допускающее значения NULL, должно содержать значение, отличное от NULL, при выходе из конструктора. Рассмотрите возможность добавления модификатора "required" или объявления значения, допускающего значение NULL.
+dotnet_diagnostic.CS8618.severity = none
+
 [*.{cs,vb}]
 
 # Naming rules

@@ -8,10 +8,16 @@ public static class WebApplicationExtensions
 {
     extension(WebApplication webApplication)
     {
-        public async Task<WebApplication> ConfigureAsync()
+        public async Task<WebApplication> ConfigureAsync() =>
+           await webApplication
+                    .ConfigureMiddlewaresPipeline()
+                    .AddScalar()
+                    .ApplyMigrationsAsync();
+
+        private WebApplication ConfigureMiddlewaresPipeline()
         {
-            webApplication.AddScalar();
-            await webApplication.ApplyMigrationsAsync();
+            webApplication.UseExceptionHandler(options => { });
+
             return webApplication;
         }
 
