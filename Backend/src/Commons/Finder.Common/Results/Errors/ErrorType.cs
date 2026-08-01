@@ -8,5 +8,5 @@ public enum ErrorType
     NotFound,
     Validation,
     BadRequest,
-    Unauthorize
+    Unauthorized
 }

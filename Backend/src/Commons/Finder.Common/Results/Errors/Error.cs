@@ -21,7 +21,7 @@ public class Error
         new Error(ErrorType.Validation, description);
 
     public static Error Unauthorize(string description) =>
-        new Error(ErrorType.Unauthorize, description);
+        new Error(ErrorType.Unauthorized, description);
 
     public static Error BadRequest(string description) =>
         new Error(ErrorType.BadRequest, description);

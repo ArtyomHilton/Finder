@@ -9,6 +9,8 @@ public static class WebApplicationBuilderExtensions
     {
         public WebApplicationBuilder Configure(IConfiguration configuration)
         {
+            webApplicationBuilder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+
             webApplicationBuilder.Services.AddEndpointsApiExplorer();
             webApplicationBuilder.AddApiVersioning();
             webApplicationBuilder.AddModules(configuration);
