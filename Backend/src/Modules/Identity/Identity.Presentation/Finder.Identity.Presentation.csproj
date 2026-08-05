@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Commons\Finder.Common.API\Finder.Common.API.csproj" />
     <ProjectReference Include="..\Identity.Application\Finder.Identity.Application.csproj" />
     <ProjectReference Include="..\Identity.Infrastructure\Finder.Identity.Infrastructure.csproj" />
   </ItemGroup>

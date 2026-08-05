@@ -7,7 +7,7 @@ public static class ApiConstants
         public const string Validation = "Validation Error";
         public const string BadRequest = "Bad Request Error";
         public const string InternalServer = "Internal Server Error";
-        public const string Unauthorized = "Unauthorize Error";
+        public const string Unauthorized = "Unauthorized Error";
         public const string NotFound = "Not Found Error";
     }
 
