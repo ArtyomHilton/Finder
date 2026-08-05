@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Diagnostics;
 
 namespace Finder.API;
 
+/// <summary>
+/// Глобальный обработчик исключений
+/// </summary>
+/// <param name="logger"></param>
 public class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : IExceptionHandler
 {
     public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
@@ -13,11 +17,11 @@ public class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : IE
             case DomainException domainException:
                 return await HandleDomainExceptionAsync(httpContext, domainException, cancellationToken);
             default:
-                return await HandleUnhandleExceptionAsync(httpContext, exception, cancellationToken);
+                return await HandleUnhandledExceptionAsync(httpContext, exception, cancellationToken);
         }
     }
 
-    private async Task<bool> HandleUnhandleExceptionAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
+    private async Task<bool> HandleUnhandledExceptionAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
     {
         logger.LogError(exception,"Произошло необработанное исключение [{ExceptionType}], сообщение: [{Message}]",
             exception.GetType().FullName,
