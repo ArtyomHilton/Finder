@@ -24,6 +24,6 @@ sealed class Handler(IServiceProvider serviceProvider) : IHandler
     {
         var service = serviceProvider.GetRequiredService(typeof(IQueryHandler<,>).MakeGenericType(typeof(TQueryReturn), query.GetType()));
 
-        return (Task<TQueryReturn>)service.GetType().GetMethod(nameof(IQueryHandler<,>))!.Invoke(service, [query, cancellationToken])!;
+        return (Task<TQueryReturn>)service.GetType().GetMethod(nameof(IQueryHandler<,>.HandleAsync))!.Invoke(service, [query, cancellationToken])!;
     }
 }
