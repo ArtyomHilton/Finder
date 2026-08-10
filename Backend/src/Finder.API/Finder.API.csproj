@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Commons\Finder.Common.API\Finder.Common.API.csproj" />
+    <ProjectReference Include="..\Commons\Finder.Common.CQRS\Finder.Common.CQRS.csproj" />
     <ProjectReference Include="..\Modules\Identity\Identity.Presentation\Finder.Identity.Presentation.csproj" />
   </ItemGroup>
 

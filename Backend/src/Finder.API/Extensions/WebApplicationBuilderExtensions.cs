@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Finder.Common.API.Extensions;
+﻿using Finder.Common.API.Extensions;
 using Finder.Common.CQRS;
 using Finder.Identity.Application;
 using Finder.Identity.Infrastructure;
@@ -13,8 +12,8 @@ public static class WebApplicationBuilderExtensions
         public WebApplicationBuilder Configure(IConfiguration configuration)
         {
             webApplicationBuilder.Services.AddEndpointsApiExplorer();
+            webApplicationBuilder.Services.AddCQRS();
             webApplicationBuilder.AddApiVersioning();
-            webApplicationBuilder.Services.AddCQRS(Assembly.GetExecutingAssembly());
             webApplicationBuilder.AddModules(configuration);
             return webApplicationBuilder;
         }
